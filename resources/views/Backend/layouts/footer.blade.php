@@ -57,6 +57,10 @@
 <!--script admin-->
 <script src="{{asset('Backend/assets/js/admin-script.js')}}"></script>
 @yield('js')
+
+@jquery
+@toastr_js
+@toastr_render
 </body>
 
 <!-- Mirrored from themes.pixelstrap.com/multikart/back-end/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Oct 2021 13:19:04 GMT -->

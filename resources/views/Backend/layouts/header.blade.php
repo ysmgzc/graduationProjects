@@ -39,4 +39,6 @@
     <!-- App css-->
     <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/admin.css')}}">
     @yield('css')
+    <!-- toastr css-->
+    @toastr_css
 </head>

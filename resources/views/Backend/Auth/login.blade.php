@@ -36,8 +36,8 @@
 
     <!-- App css-->
     <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/admin.css')}}">
-
-
+    <!-- toastr css-->
+    @toastr_css
 
 
 </head>
@@ -282,7 +282,9 @@
         }
     );
 </script>
-
+@jquery
+@toastr_js
+@toastr_render
 </body>
 
 <!-- Mirrored from themes.pixelstrap.com/multikart/back-end/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Oct 2021 13:23:17 GMT -->

@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
+    toastr()->info('Are you the 6 fingered man?');
     return view('Backend.Auth.login');
 });
