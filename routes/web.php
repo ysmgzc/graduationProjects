@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,8 +14,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('giris', [LoginController::class, 'showLogin'])->name('login');
+Route::post('giris', [LoginController::class, 'login']);
+Route::get('cikis', [LoginController::class, 'logout'])->name('logout');
+Route::post('kayit-ol', [RegisterController::class, 'register'])->name('register');
 
-Route::get('/', function () {
-    toastr()->info('Are you the 6 fingered man?');
-    return view('Backend.Auth.login');
+Route::prefix('panel')->middleware('auth')->group(function (){
+    Route::get('/', function (){
+        toastr()->success('Yönetim Paneline Hoşgeldiniz');
+        return view('Backend.index');
+    })->name('admin.index');
 });
+Route::get('/frontend', function () {
+    toastr()->info('Are you the 6 fingered man?');
+    return view('Frontend.index');
+});
+

@@ -146,20 +146,20 @@
                         <div class="single-item">
                             <div>
                                 <div>
-                                    <h3>Welcome to Multikart</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+                                    <h3>Yönetim Paneline Hoşgeldiniz</h3>
+                                    <p>Tuğran Demirel - Yeşim Gezici Bitime Projesi</p>
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <h3>Welcome to Multikart</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+                                    <h3>Yönetim Paneline Hoşgeldiniz</h3>
+                                    <p>Tuğran Demirel - Yeşim Gezici Bitime Projesi</p>
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <h3>Welcome to Multikart</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+                                    <h3>Yönetim Paneline Hoşgeldiniz</h3>
+                                    <p>Tuğran Demirel - Yeşim Gezici Bitime Projesi</p>
                                 </div>
                             </div>
                         </div>
@@ -170,70 +170,58 @@
                         <div class="card-body">
                             <ul class="nav nav-tabs nav-material" id="top-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="top-profile-tab" data-bs-toggle="tab" href="#top-profile" role="tab" aria-controls="top-profile" aria-selected="true"><span class="icon-user me-2"></span>Login</a>
+                                    <a class="nav-link active" id="top-profile-tab" data-bs-toggle="tab" href="#top-profile" role="tab" aria-controls="top-profile" aria-selected="true"><span class="icon-user me-2"></span>Giriş Yap</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="contact-top-tab" data-bs-toggle="tab" href="#top-contact" role="tab" aria-controls="top-contact" aria-selected="false"><span class="icon-unlock me-2"></span>Register</a>
+                                    <a class="nav-link" id="contact-top-tab" data-bs-toggle="tab" href="#top-contact" role="tab" aria-controls="top-contact" aria-selected="false"><span class="icon-unlock me-2"></span>Kayıt Ol</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="top-tabContent">
                                 <div class="tab-pane fade show active" id="top-profile" role="tabpanel" aria-labelledby="top-profile-tab">
-                                    <form class="form-horizontal auth-form">
+                                    <form class="form-horizontal auth-form" action="{{route('login')}}" method="post">
+                                        @csrf
                                         <div class="form-group">
-                                            <input required="" name="login[username]" type="email" class="form-control" placeholder="Username" id="exampleInputEmail1">
+                                            <input required="" name="email" type="email" class="form-control" placeholder="Username" id="exampleInputEmail1">
                                         </div>
                                         <div class="form-group">
-                                            <input required="" name="login[password]" type="password" class="form-control" placeholder="Password">
+                                            <input required="" name="password" type="password" class="form-control" placeholder="Password">
                                         </div>
                                         <div class="form-terms">
                                             <div class="form-check mesm-2">
-                                                <input type="checkbox" class="form-check-input" id="customControlAutosizing">
-                                                <label class="form-check-label ps-2" for="customControlAutosizing">Remember me</label>
-                                                <a href="#" class="btn btn-default forgot-pass">lost your password</a>
+                                                <input type="checkbox" name="remember" class="form-check-input" id="customControlAutosizing">
+                                                <label class="form-check-label ps-2" for="customControlAutosizing">Beni hatırla</label>
+                                                <a href="#" class="btn btn-default forgot-pass">ŞİFREMİ UNUTTUM</a>
                                             </div>
                                         </div>
                                         <div class="form-button">
-                                            <button class="btn btn-primary" type="submit">Login</button>
+                                            <button class="btn btn-primary" type="submit">Giriş Yap</button>
                                         </div>
-                                        <div class="form-footer">
-                                            <span>Or Login up with social platforms</span>
-                                            <ul class="social">
-                                                <li><a class="ti-facebook" href="#"></a></li>
-                                                <li><a class="ti-twitter" href="#"></a></li>
-                                                <li><a class="ti-instagram" href="#"></a></li>
-                                                <li><a class="ti-pinterest" href="#"></a></li>
-                                            </ul>
-                                        </div>
+
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="top-contact" role="tabpanel" aria-labelledby="contact-top-tab">
-                                    <form class="form-horizontal auth-form">
+                                    <form class="form-horizontal auth-form" action="{{route('register')}}" method="post">
+                                        @csrf
                                         <div class="form-group">
-                                            <input required="" name="login[username]" type="email" class="form-control" placeholder="Username" id="exampleInputEmail12">
+                                            <input required="" name="name" type="text" class="form-control" placeholder="Kullanıcı Adınız" id="exampleInputEmail12">
                                         </div>
                                         <div class="form-group">
-                                            <input required="" name="login[password]" type="password" class="form-control" placeholder="Password">
+                                            <input required="" name="email" type="email" class="form-control" placeholder="Email Adresiniz" id="exampleInputEmail1">
                                         </div>
                                         <div class="form-group">
-                                            <input required="" name="login[password]" type="password" class="form-control" placeholder="Confirm Password">
+                                            <input required="" name="password" type="password" class="form-control" placeholder="Şifreniz">
+                                        </div>
+                                        <div class="form-group">
+                                            <input required="" name="passwordVerifedAt" type="password" class="form-control" placeholder="Şifre Tekrarınız">
                                         </div>
                                         <div class="form-terms">
                                             <div class="form-check mesm-2">
-                                                <input type="checkbox" class="form-check-input" id="customControlAutosizing1">
-                                                <label class="form-check-label ps-2" for="customControlAutosizing1"><span>I agree all statements in <a href="#"  class="pull-right">Terms &amp; Conditions</a></span></label>
+                                                <input type="checkbox" name="agreement" class="form-check-input" id="customControlAutosizing1">
+                                                <label class="form-check-label ps-2" for="customControlAutosizing1"><span>Kullanıcı sözleşmesini <a href="#"  class=""> okudum &amp; kabul ediyorum.</a></span></label>
                                             </div>
                                         </div>
                                         <div class="form-button">
-                                            <button class="btn btn-primary" type="submit">Register</button>
-                                        </div>
-                                        <div class="form-footer">
-                                            <span>Or Sign up with social platforms</span>
-                                            <ul class="social">
-                                                <li><a class="ti-facebook" href="#"></a></li>
-                                                <li><a class="ti-twitter" href="#"></a></li>
-                                                <li><a class="ti-instagram" href="#"></a></li>
-                                                <li><a class="ti-pinterest" href="#"></a></li>
-                                            </ul>
+                                            <button class="btn btn-primary" type="submit">Kayıt Ol</button>
                                         </div>
                                     </form>
                                 </div>
@@ -243,7 +231,7 @@
                     </div>
                 </div>
             </div>
-            <a href="index.html" class="btn btn-primary back-btn"><i data-feather="arrow-left"></i>back</a>
+            <a href="index.html" class="btn btn-primary back-btn"><i data-feather="arrow-left"></i>Anasayfaya Dön</a>
         </div>
     </div>
 </div>

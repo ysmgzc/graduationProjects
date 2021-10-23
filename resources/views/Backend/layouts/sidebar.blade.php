@@ -89,7 +89,7 @@
             </li>
             <li><a class="sidebar-header" href="invoice.html"><i data-feather="archive"></i><span>Kesilen Faturalar</span></a>
             </li>
-            <li><a class="sidebar-header" href="login.html"><i data-feather="log-in"></i><span>Çıkış Yap</span></a>
+            <li><a class="sidebar-header" href="{{route('logout')}}"><i data-feather="log-in"></i><span>Çıkış Yap</span></a>
             </li>
         </ul>
     </div>
