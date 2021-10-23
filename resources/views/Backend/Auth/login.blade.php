@@ -181,10 +181,10 @@
                                     <form class="form-horizontal auth-form" action="{{route('login')}}" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <input required="" name="email" type="email" class="form-control" placeholder="Username" id="exampleInputEmail1">
+                                            <input required="" name="email" type="email" class="form-control" placeholder="Email Adresiniz" id="exampleInputEmail1">
                                         </div>
                                         <div class="form-group">
-                                            <input required="" name="password" type="password" class="form-control" placeholder="Password">
+                                            <input required="" name="password" type="password" class="form-control" placeholder="Şifreniz">
                                         </div>
                                         <div class="form-terms">
                                             <div class="form-check mesm-2">
