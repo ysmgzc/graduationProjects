@@ -14,6 +14,9 @@ use App\Http\Controllers\Backend\Auth\RegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('sifre-yenileme', function (){
+   return view('Backend.Auth.reset_password');
+});
 Route::get('giris', [LoginController::class, 'showLogin'])->name('login');
 Route::post('giris', [LoginController::class, 'login']);
 Route::get('cikis', [LoginController::class, 'logout'])->name('logout');
