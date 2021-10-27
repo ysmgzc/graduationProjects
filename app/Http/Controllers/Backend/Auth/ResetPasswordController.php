@@ -22,7 +22,7 @@ class ResetPasswordController extends Controller
     {
         $email = $request->email;
         $user = User::where('email', $email)->first();
-
+//        dd('Buradasın');
         if ($user)
         {
 //             40 karakter boyutunda bir adet token oluştur
@@ -32,8 +32,10 @@ class ResetPasswordController extends Controller
 
             $mail = new ResetPasswordMail($user);
             Mail::to($user->email)->send($mail);
+//        dd('Buradasın');
         }
 
+        dd('Şifre sıfırlama mailiniz gönderilmiştir');
         dd($request->all());
     }
 }

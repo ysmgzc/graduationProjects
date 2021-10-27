@@ -190,7 +190,7 @@
                                             <div class="form-check mesm-2">
                                                 <input type="checkbox" name="remember" class="form-check-input" id="customControlAutosizing">
                                                 <label class="form-check-label ps-2" for="customControlAutosizing">Beni hatırla</label>
-                                                <a href="#" class="btn btn-default forgot-pass">ŞİFREMİ UNUTTUM</a>
+                                                <a href="{{route('resetPassword')}}" class="btn btn-default forgot-pass">ŞİFREMİ UNUTTUM</a>
                                             </div>
                                         </div>
                                         <div class="form-button">
