@@ -175,13 +175,13 @@
                             </ul>
                             <div class="tab-content" id="top-tabContent">
                                 <div class="tab-pane fade show active" id="top-profile" role="tabpanel" aria-labelledby="top-profile-tab">
-                                    <form class="form-horizontal auth-form" action="{{route('login')}}" method="post">
+                                    <form class="form-horizontal auth-form" action="" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <input required="" name="email" type="email" class="form-control" placeholder="Email Adresiniz" id="exampleInputEmail1">
                                         </div>
                                         <div class="form-button">
-                                            <button class="btn btn-primary" type="submit">ŞİFRE YENİLE</button>
+                                            <button class="btn btn-primary" type="submit">ŞİFREMİ SIFIRLA</button>
                                         </div>
                                     </form>
                                 </div>
