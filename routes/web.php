@@ -35,6 +35,9 @@ Route::prefix('panel')->middleware('auth')->group(function (){
         toastr()->success('Yönetim Paneline Hoşgeldiniz');
         return view('Backend.index');
     })->name('admin.index');
+    Route::get('site-ayarlari',function (){
+        return view('Backend.Site Settings.site_setting');
+    })->name('siteSetting');
 });
 
 

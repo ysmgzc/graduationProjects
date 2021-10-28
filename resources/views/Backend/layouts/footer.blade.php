@@ -1,5 +1,6 @@
 
 </div>
+</div>
 
 <!-- latest jquery-->
 <script src="{{asset('Backend/assets/js/jquery-3.3.1.min.js')}}"></script>

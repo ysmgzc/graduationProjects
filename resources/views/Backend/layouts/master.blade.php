@@ -1,4 +1,5 @@
 @include('Backend.layouts.header')
 @include('Backend.layouts.menu')
+@include('Backend.layouts.sidebar')
     @yield('content')
 @include('Backend.layouts.footer')

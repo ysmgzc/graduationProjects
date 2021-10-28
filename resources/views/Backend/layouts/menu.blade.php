@@ -2,7 +2,6 @@
 
 <!-- page-wrapper Start-->
 <div class="page-wrapper">
-
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-right row">
@@ -82,3 +81,5 @@
         </div>
     </div>
     <!-- Page Header Ends -->
+
+    <div class="page-body-wrapper">

@@ -2,11 +2,8 @@
 @section('content')
     <!-- Page Body Start-->
     <div class="page-body-wrapper">
-
         <!-- Page Sidebar Start-->
-        @include('Backend.layouts.sidebar')
         <!-- Page Sidebar Ends-->
-
         <!-- Right sidebar Start-->
         <div class="right-sidebar" id="right_side_bar">
             <div>
