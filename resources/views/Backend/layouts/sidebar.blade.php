@@ -10,7 +10,7 @@
             <p>general manager.</p>
         </div>
         <ul class="sidebar-menu">
-            <li><a class="sidebar-header" href="index.html"><i data-feather="home"></i><span>Anasayfa</span></a></li>
+            <li><a class="sidebar-header" href="{{route('admin.index')}}"><i data-feather="home"></i><span>Anasayfa</span></a></li>
             <li><a class="sidebar-header" href="#"><i data-feather="box"></i> <span>Ürünler</span><i class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
                     <li>
@@ -85,8 +85,8 @@
             <li><a class="sidebar-header" href="#"><i data-feather="settings" ></i><span>Ayarlar</span><i class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
                     <li><a href="profile.html"><i class="fa fa-circle"></i>Profil</a></li>
-                    <li><a href="{{route('siteSetting')}}"><i class="fa fa-circle"></i>Site Ayarları</a></li>
-                    <li><a href="profile.html"><i class="fa fa-circle"></i>Mail Ayarları</a></li>
+                    <li><a href="{{route('admin.site.settings')}}"><i class="fa fa-circle"></i>Site Ayarları</a></li>
+                    <li><a href="{{route('admin.site.mail.settings')}}"><i class="fa fa-circle"></i>Mail Ayarları</a></li>
                 </ul>
             </li>
             <li><a class="sidebar-header" href="invoice.html"><i data-feather="archive"></i><span>Kesilen Faturalar</span></a>

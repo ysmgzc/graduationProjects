@@ -37,7 +37,10 @@ Route::prefix('panel')->middleware('auth')->group(function (){
     })->name('admin.index');
     Route::get('site-ayarlari',function (){
         return view('Backend.Site Settings.site_setting');
-    })->name('siteSetting');
+    })->name('admin.site.settings');
+    Route::get('mail-ayarlari',function (){
+        return view('Backend.Site Settings.site_mail_setting');
+    })->name('admin.site.mail.settings');
 });
 
 

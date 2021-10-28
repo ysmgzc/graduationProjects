@@ -26,6 +26,7 @@
 
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/vendors/icofont.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/vendors/themify-icons.css')}}">
 
     <!-- Prism css-->
     <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/vendors/prism.css')}}">
