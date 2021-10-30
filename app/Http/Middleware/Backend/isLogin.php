@@ -18,7 +18,7 @@ class isLogin
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check() && Auth::user()->statu == 1)
-            return redirect()->route('Backend.index');
+            return redirect()->route('admin.index');
         return $next($request);
     }
 }

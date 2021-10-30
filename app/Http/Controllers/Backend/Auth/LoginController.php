@@ -34,7 +34,7 @@ class LoginController extends Controller
 //        Auth::attempt(['email'=>$request->email, 'password'=>$request->password]);
 
 //        2- Kullanıcı var mı yok mu diye kontrol yaparak giriş işlemini gerçekleşitiryoruz.
-        $user = User::where('email', $email)->first();
+        $user = User::where('email', $email)->where('statu', 1)->first();
         if ($user)
         {
             // kullanıcı sifresi dogru mu
