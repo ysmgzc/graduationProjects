@@ -19,9 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('reset_password_token')->default(null);
-            $table->timestamp('reset_password_expired')->default(null);
+            $table->string('reset_password_token')->nullable()->comment('Sifre resetleme tokeni');
+            $table->timestamp('reset_password_expired')->nullable()->comment('Sifre resetleme token geçerlilik süresi');
             $table->string('image')->default(null);
+            $table->tinyInteger('statu')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });

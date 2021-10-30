@@ -26,6 +26,7 @@ class UserSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password'=>bcrypt('12345678'),
                 'image'=>$faker->imageUrl(640, 480, 'cats'),
+                'statu'=>1,
                 'remember_token' => Str::random(10),
             ]);
         }
@@ -35,6 +36,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password'=>bcrypt('12345678'),
             'image'=>$faker->imageUrl(640, 480, 'cats'),
+            'statu'=>1,
             'remember_token' => Str::random(10),
         ]);
 

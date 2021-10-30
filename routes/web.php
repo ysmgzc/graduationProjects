@@ -15,22 +15,24 @@ use App\Http\Controllers\Backend\Auth\ResetPasswordController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware('isAdmin')->group(function (){
 
-Route::get('giris', [LoginController::class, 'showLogin'])->name('login');
-Route::post('giris', [LoginController::class, 'login']);
-Route::get('cikis', [LoginController::class, 'logout'])->name('logout');
-Route::post('kayit-ol', [RegisterController::class, 'register'])->name('register');
-Route::get('sifre/yenile', [ResetPasswordController::class, 'showPasswordForm'])->name('resetPassword');
-Route::get('sifre/yenile/{token}', [ResetPasswordController::class, 'resetPasswordShowForm'])->name('resetPassword.showForm');
-Route::post('sifre/yenile', [ResetPasswordController::class, 'reset']);
-
-
-
-
+    Route::get('giris', [LoginController::class, 'showLogin'])->name('login');
+    Route::post('giris', [LoginController::class, 'login']);
+    Route::get('cikis', [LoginController::class, 'logout'])->name('logout');
+    Route::post('kayit-ol', [RegisterController::class, 'register'])->name('register');
+    Route::get('sifre/yenile', [ResetPasswordController::class, 'showPasswordForm'])->name('resetPassword');
+    Route::get('sifre/yenile/{token}', [ResetPasswordController::class, 'resetPasswordShowForm'])->name('resetPassword.showForm');
+    Route::post('sifre/yenile', [ResetPasswordController::class, 'reset']);
+});
 
 
 
-Route::prefix('panel')->middleware('auth')->group(function (){
+
+
+
+
+Route::prefix('panel')->middleware('isLogin')->group(function (){
     Route::get('/', function (){
         toastr()->success('Yönetim Paneline Hoşgeldiniz');
         return view('Backend.index');

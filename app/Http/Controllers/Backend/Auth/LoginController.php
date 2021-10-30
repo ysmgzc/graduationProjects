@@ -44,6 +44,12 @@ class LoginController extends Controller
                 Auth::login($user, $remember);
                 return redirect()->route('admin.index');
             }
+            else
+            {
+                toastError('Hatalı  giriş');
+                return redirect()->route('login');
+            }
+
 
         }
         else
