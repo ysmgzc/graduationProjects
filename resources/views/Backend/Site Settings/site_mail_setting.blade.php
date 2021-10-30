@@ -24,7 +24,8 @@
 
         <!-- Container-fluid starts-->
         <div class="container-fluid">
-            <form action="">
+            <form action="{{route('admin.site.mail.settings.update', $smtp_settings->id)}}" method="post">
+                @csrf
                 <div class="row product-adding">
                     <div class="col-xl-6">
                             <div class="card">
@@ -35,7 +36,7 @@
                                     <div class="digital-add needs-validation">
                                         <div class="form-group">
                                             <label for="validationCustom01" class="col-form-label pt-0"><span>*</span> SMTP Sunucusu</label>
-                                            <input class="form-control" name="smtp_server" id="validationCustom01" type="text" required="" value="{{$smtp_settings->server_name}}">
+                                            <input class="form-control" name="smtp_server_name" id="validationCustom01" type="text" required="" value="{{$smtp_settings->server_name}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="validationCustomtitle" class="col-form-label pt-0"><span>*</span> SMTP Kullanıcı Adı</label>
@@ -65,7 +66,7 @@
                                         </div>
                                         <div class="form-group mb-0">
                                             <div class="product-buttons text-center">
-                                                <button type="button" class="btn btn-primary">Güncelle</button>
+                                                <button  class="btn btn-primary">Güncelle</button>
                                             </div>
                                         </div>
                                     </div>
