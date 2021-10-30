@@ -27,10 +27,10 @@ class SMTPSettingsController extends Controller
             $validator = $request->validate([
                 'smpt_port'=> 'numeric'
             ]);
-            if ($validator->fails())
-            {
-                return redirect()->withErrors($validator)->route('admin.site.mail.settings');
-            }
+//            if ($validator->fails())
+//            {
+//                return redirect()->withErrors($validator)->route('admin.site.mail.settings');
+//            }
             $smpt_settings = Smtp_settings::where('id', 1)->first();
 
             $smpt_settings->server_name = $request->smtp_server_name;
