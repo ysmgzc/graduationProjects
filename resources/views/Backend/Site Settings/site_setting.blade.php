@@ -73,20 +73,6 @@
                     <div class="col-xl-6">
                         <div class="card">
                                 <div class="card-header">
-                                    <h5>Site Açıklaması</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="digital-add needs-validation">
-                                        <div class="form-group mb-0">
-                                            <div class="description-sm">
-                                                <textarea id="" name="name" cols="10" rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="card">
-                                <div class="card-header">
                                     <h5>Meta Data</h5>
                                 </div>
                                 <div class="card-body">
