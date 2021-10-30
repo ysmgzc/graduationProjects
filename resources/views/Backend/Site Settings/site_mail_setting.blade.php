@@ -61,6 +61,9 @@
                                             <input class="form-control" name="smtp_encryption" id="validationCustomtitle3" type="text" required="" value="{{$smtp_settings->encryption}}">
                                         </div>
                                         <div class="form-group">
+                                            @if($errors->has('smtp_port'))
+                                                <input class="form-control" name="smtp_port" id="validationCustomtitle2" type="text" required="" value="hatalıı">
+                                            @endif
                                             <label for="validationCustomtitle2" class="col-form-label pt-0"><span>*</span> SMTP Port</label>
                                             <input class="form-control" name="smtp_port" id="validationCustomtitle2" type="text" required="" value="{{$smtp_settings->port}}">
                                         </div>
