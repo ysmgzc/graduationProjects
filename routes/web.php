@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\Auth\RegisterController;
 use App\Http\Controllers\Backend\Auth\ResetPasswordController;
-
+use App\Http\Controllers\Backend\SiteSettings\SMTPSettingsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,9 +41,8 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
     Route::get('site-ayarlari',function (){
         return view('Backend.Site Settings.site_setting');
     })->name('admin.site.settings');
-    Route::get('mail-ayarlari',function (){
-        return view('Backend.Site Settings.site_mail_setting');
-    })->name('admin.site.mail.settings');
+    Route::get('mail-ayarlari',[SMTPSettingsController::class, 'index'])->name('admin.site.mail.settings');
+    Route::post('mail-ayarlari/{}',[SMTPSettingsController::class, 'index'])->name('admin.site.mail.settings.post');
 });
 
 

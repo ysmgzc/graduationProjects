@@ -6,7 +6,6 @@
 @endsection
 @section('content')
     <div class="page-body">
-
         <!-- Container-fluid starts-->
         <div class="container-fluid">
             <div class="page-header">
@@ -36,15 +35,15 @@
                                     <div class="digital-add needs-validation">
                                         <div class="form-group">
                                             <label for="validationCustom01" class="col-form-label pt-0"><span>*</span> SMTP Sunucusu</label>
-                                            <input class="form-control" name="smtp_server" id="validationCustom01" type="text" required="">
+                                            <input class="form-control" name="smtp_server" id="validationCustom01" type="text" required="" value="{{$smtp_settings->server_name}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="validationCustomtitle" class="col-form-label pt-0"><span>*</span> SMTP Kullanıcı Adı</label>
-                                            <input class="form-control" name="smtp_username" id="validationCustomtitle" type="text" required="">
+                                            <input class="form-control" name="smtp_username" id="validationCustomtitle" type="text" required="" value="{{$smtp_settings->username}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="validationCustomtitle6" class="col-form-label pt-0"><span>*</span> SMTP Kullanıcı Şifresi</label>
-                                            <input class="form-control" name="smtp_password" id="validationCustomtitle6" type="text" required="">
+                                            <input class="form-control" name="smtp_password" id="validationCustomtitle6" type="text" required="" value="{{$smtp_settings->password}}">
                                         </div>
                                     </div>
                                 </div>
@@ -58,11 +57,11 @@
                                     <div class="digital-add needs-validation">
                                         <div class="form-group">
                                             <label for="validationCustomtitle3" class="col-form-label pt-0"><span>*</span> SMTP Güvenliği</label>
-                                            <input class="form-control" name="smtp_encryption" id="validationCustomtitle3" type="text" required="">
+                                            <input class="form-control" name="smtp_encryption" id="validationCustomtitle3" type="text" required="" value="{{$smtp_settings->encryption}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="validationCustomtitle2" class="col-form-label pt-0"><span>*</span> SMTP Port</label>
-                                            <input class="form-control" name="smtp_port" id="validationCustomtitle2" type="text" required="">
+                                            <input class="form-control" name="smtp_port" id="validationCustomtitle2" type="text" required="" value="{{$smtp_settings->port}}">
                                         </div>
                                         <div class="form-group mb-0">
                                             <div class="product-buttons text-center">
