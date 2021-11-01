@@ -25,7 +25,7 @@
 
         <!-- Container-fluid starts-->
         <div class="container-fluid">
-            <form method="post" enctype="multipart/form-data" action="{{route('admin.site.settings', $site_settings->id)}}">
+            <form method="post" enctype="multipart/form-data" action="{{route('admin.site.settings.update', $site_settings->id)}}">
                 @csrf
 
                 <div class="row product-adding">
@@ -46,15 +46,15 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-form-label"><span>*</span> Durum</label>
+                                            <label class="col-form-label"><span>*</span> Status</label>
                                             <div class="m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
                                                 <label class="d-block" for="edo-ani">
-                                                    <input {{ $site_settings->statu == 1 ? 'checked' : '' }} class="radio_animated" id="edo-ani" type="radio" name="enable">
-                                                    Aktif
+                                                    <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" @if($site_settings->statu == 1) checked @endif>
+                                                    Enable
                                                 </label>
                                                 <label class="d-block" for="edo-ani1">
-                                                    <input {{ $site_settings->statu == 0 ? 'checked' : '' }}  class="radio_animated" id="edo-ani1" type="radio" name="disable">
-                                                    İnaktif
+                                                    <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" @if($site_settings->statu == 0) checked @endif>
+                                                    Disable
                                                 </label>
                                             </div>
                                         </div>
@@ -81,7 +81,7 @@
                                     <div class="digital-add needs-validation">
                                         <div class="form-group">
                                             <label for="validationCustom05" class="col-form-label pt-0"> Meta Keywords</label>
-                                            <input class="form-control" id="validationCustom05" type="text" required="" name="keywords" value="{{$site_settings->keywords}}">
+                                            <input  class="form-control" id="validationCustom05" type="text" required="" name="keywords" value="{{$site_settings->keywords}}">
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Meta Açıklama</label>
@@ -93,6 +93,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                         </div>
                     </div>
@@ -104,6 +105,21 @@
     </div>
 @endsection
 @section('js')
+    <script>
+        let dataOne = $('#edo-ani');
+        let dataTwo = $('#edo-ani1');
+        dataOne.on('change', function(){
+            if(dataOne.val() == 'on'){
+                alert(1)
+            }
+
+        });
+        dataTwo.on('change', function(){
+            if(dataTwo.val() == 'on'){
+                alert(1)
+            }
+        });
+    </script>
     <!--ckeditor js-->
     <script src="{{asset('Backend/assets/js/editor/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('Backend/assets/js/editor/ckeditor/styles.js')}}"></script>
