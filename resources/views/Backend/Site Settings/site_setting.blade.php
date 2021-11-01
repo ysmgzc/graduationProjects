@@ -25,7 +25,9 @@
 
         <!-- Container-fluid starts-->
         <div class="container-fluid">
-            <form action="">
+            <form method="post" enctype="multipart/form-data" action="{{route('admin.site.settings', $site_settings->id)}}">
+                @csrf
+
                 <div class="row product-adding">
                     <div class="col-xl-6">
                             <div class="card">
@@ -36,22 +38,22 @@
                                     <div class="digital-add needs-validation">
                                         <div class="form-group">
                                             <label for="validationCustom01" class="col-form-label pt-0"><span>*</span> Başlık</label>
-                                            <input class="form-control" name="title" id="validationCustom01" type="text" required="">
+                                            <input class="form-control" name="title" id="validationCustom01" type="text" required="" value="{{$site_settings->title}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="validationCustomtitle" class="col-form-label pt-0"><span>*</span> URL</label>
-                                            <input class="form-control" name="url" id="validationCustomtitle" type="text" required="">
+                                            <input class="form-control" name="url" id="validationCustomtitle" type="text" required="" value="{{$site_settings->url}}">
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-form-label"><span>*</span> Durum</label>
                                             <div class="m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
                                                 <label class="d-block" for="edo-ani">
-                                                    <input class="radio_animated" id="edo-ani" type="radio" name="enable">
+                                                    <input {{ $site_settings->statu == 1 ? 'checked' : '' }} class="radio_animated" id="edo-ani" type="radio" name="enable">
                                                     Aktif
                                                 </label>
                                                 <label class="d-block" for="edo-ani1">
-                                                    <input class="radio_animated" id="edo-ani1" type="radio" name="disable">
+                                                    <input {{ $site_settings->statu == 0 ? 'checked' : '' }}  class="radio_animated" id="edo-ani1" type="radio" name="disable">
                                                     İnaktif
                                                 </label>
                                             </div>
@@ -78,16 +80,16 @@
                                 <div class="card-body">
                                     <div class="digital-add needs-validation">
                                         <div class="form-group">
-                                            <label for="validationCustom05" class="col-form-label pt-0"> Meta Başlık</label>
-                                            <input class="form-control" id="validationCustom05" type="text" required="">
+                                            <label for="validationCustom05" class="col-form-label pt-0"> Meta Keywords</label>
+                                            <input class="form-control" id="validationCustom05" type="text" required="" name="keywords" value="{{$site_settings->keywords}}">
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Meta Açıklama</label>
-                                            <textarea rows="4" cols="12"></textarea>
+                                            <textarea name="description" rows="4" cols="12">{{$site_settings->description}}</textarea>
                                         </div>
                                         <div class="form-group mb-0">
                                             <div class="product-buttons text-center">
-                                                <button type="button" class="btn btn-primary">Güncelle</button>
+                                                <button class="btn btn-primary">Güncelle</button>
                                             </div>
                                         </div>
                                     </div>
