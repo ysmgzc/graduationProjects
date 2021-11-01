@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\SiteSettings;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SiteSettingsRequest;
 use Illuminate\Http\Request;
 use App\Models\SiteSettings;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,7 @@ class SiteSettingController extends Controller
         return view('Backend.Site Settings.site_setting', compact('site_settings'));
     }
 
-    public function update(Request $request)
+    public function update(SiteSettingsRequest $request)
     {
         if (!SiteSettings::where('id', $request->id)->first())
         {
