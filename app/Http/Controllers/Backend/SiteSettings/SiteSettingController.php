@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SiteSettings;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class SiteSettingController extends Controller
 {
@@ -35,10 +36,9 @@ class SiteSettingController extends Controller
                 $site_settings->keywords = $request->keywords;
                 $site_settings->description = $request->description;
                 $site_settings->updated_at = now();
-                dd($request->statu);
-                if($request->statu == "enable")
+                if($request->statu == 1)
                     $site_settings->statu = 1;
-                else if ($request->statu == "disable")
+                else if ($request->statu == 0)
                     $site_settings->statu = 0;
                 else
                 {
@@ -69,8 +69,6 @@ class SiteSettingController extends Controller
                 toastError('Geçersiz işlem.');
                 return redirect()->back();
             }
-
-
         }
         //        return view('Backend.Site Settings.site_mail_setting', compact('smtp_settings'));
     }

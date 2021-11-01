@@ -46,15 +46,15 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-form-label"><span>*</span> Status</label>
+                                            <label class="col-form-label"><span>*</span> Site Aktiflik Durumu</label>
                                             <div class="m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
                                                 <label class="d-block" for="edo-ani">
-                                                    <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" @if($site_settings->statu == 1) checked @endif>
-                                                    Enable
+                                                    <input class="radio_animated" id="edo-ani" type="radio" value="1" name="statu" @if($site_settings->statu == 1) checked @endif>
+                                                    Aktif
                                                 </label>
                                                 <label class="d-block" for="edo-ani1">
-                                                    <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" @if($site_settings->statu == 0) checked @endif>
-                                                    Disable
+                                                    <input class="radio_animated" id="edo-ani1" type="radio" value="0" name="statu" @if($site_settings->statu == 0) checked @endif>
+                                                    İnaktif
                                                 </label>
                                             </div>
                                         </div>
@@ -105,21 +105,21 @@
     </div>
 @endsection
 @section('js')
-    <script>
-        let dataOne = $('#edo-ani');
-        let dataTwo = $('#edo-ani1');
-        dataOne.on('change', function(){
-            if(dataOne.val() == 'on'){
-                alert(1)
-            }
+{{--    <script>--}}
+{{--        let dataOne = $('#edo-ani');--}}
+{{--        let dataTwo = $('#edo-ani1');--}}
+{{--        dataOne.on('change', function(){--}}
+{{--            if(dataOne.val() == 'on'){--}}
+{{--                alert(1)--}}
+{{--            }--}}
 
-        });
-        dataTwo.on('change', function(){
-            if(dataTwo.val() == 'on'){
-                alert(1)
-            }
-        });
-    </script>
+{{--        });--}}
+{{--        dataTwo.on('change', function(){--}}
+{{--            if(dataTwo.val() == 'on'){--}}
+{{--                alert(1)--}}
+{{--            }--}}
+{{--        });--}}
+{{--    </script>--}}
     <!--ckeditor js-->
     <script src="{{asset('Backend/assets/js/editor/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('Backend/assets/js/editor/ckeditor/styles.js')}}"></script>
