@@ -1,4 +1,5 @@
 @extends('Backend.layouts.master')
+@section('title', 'Profil')
 @section('content')
     <div class="page-body">
 
