@@ -24,7 +24,7 @@ class SiteSettingsRequest extends FormRequest
     public function rules()
     {
         return [
-            'favicon'=>'mimes:ico|max:100',
+            'favicon'=>'mimes:ico',
             'logo'=>'mimes:image/webp',
         ];
     }
@@ -33,9 +33,7 @@ class SiteSettingsRequest extends FormRequest
     {
         return [
             'favicon.mimes' => 'Favicon uzantısının .ico olması gerekmektedir.',
-            'favicon.max' => 'Favicon boyutu en fazla 2 MB olmak zorundadır.',
-            'logo.mimes' => 'Sitenizde güzel durması için logo uzantısı .webp olması gerekmektedir.',
-            'logo.max' => 'Logo boyutu en fazla 200kb olmak zorundadır.'
+            'logo.mimes' => 'Sitenizde güzel durması için logonun image/webp formatında olması gerekmektedir.',
         ];
     }
 }

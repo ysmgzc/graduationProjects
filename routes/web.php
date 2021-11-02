@@ -48,6 +48,10 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
 
     Route::get('site-ayarlari',[SiteSettingController::class, 'index'])->name('admin.site.settings');
     Route::post('site-ayarlari/{id}',[SiteSettingController::class, 'update'])->name('admin.site.settings.update');
+
+    Route::get('profil', function (){
+        return view('Backend.AdminProfil.profil');
+    })->name('admin.profil');
 });
 
 

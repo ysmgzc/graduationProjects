@@ -58,35 +58,20 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        @if($errors->any())
-                                            @foreach($errors->all() as $error)
                                             <div class="form-group">
                                                 <label for="validationCustomtitle5" class="col-form-label pt-0">Site Favicon</label>
-                                                @if($errors->has('favicon'))
-                                                    <input class="form-control is-invalid" name="favicon" id="validationCustomtitle5" type="file" >
-                                                    <div id="validationCustomtitle6" class="invalid-feedback">@error('favicon') {{$message}} @enderror</div>
-                                                @endif
+                                                <input class="form-control @error('favicon') is-invalid @enderror" name="favicon" id="validationCustomtitle5" type="file" >
+                                                    @error('favicon')
+                                                        <div id="validationCustomtitle6" class="invalid-feedback"> {{$message}}</div>
+                                                    @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label for="validationCustomtitle6" class="col-form-label pt-0">Site Logo</label>
-                                                @if($errors->has('logo'))
-                                                <input class="form-control is-invalid" name="logo" id="validationCustomtitle6" type="file" >
-                                                    <div id="validationCustomtitle6" class="invalid-feedback">
-                                                        @error('logo') {{$message}} @enderror
-                                                    </div>
-                                                @endif
+                                                <input class="form-control @error('logo') is-invalid @enderror" name="logo" id="validationCustomtitle6" type="file" >
+                                                    @error('logo')
+                                                        <div id="validationCustomtitle6" class="invalid-feedback">{{$message}}</div>
+                                                    @enderror
                                             </div>
-                                            @endforeach
-                                        @else
-                                            <div class="form-group">
-                                                <label for="validationCustomtitle5" class="col-form-label pt-0">Site Favicon</label>
-                                                <input class="form-control" name="favicon" id="validationCustomtitle5" type="file" >
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="validationCustomtitle6" class="col-form-label pt-0">Site Logo</label>
-                                                <input class="form-control" name="logo" id="validationCustomtitle6" type="file" >
-                                            </div>
-                                        @endif
                                     </div>
                                 </div>
                             </div>
