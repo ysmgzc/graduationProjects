@@ -24,7 +24,6 @@ class PageController extends Controller
      */
     public function create()
     {
-
         return view('Backend.Page.page_create');
     }
 
