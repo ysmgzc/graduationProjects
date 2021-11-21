@@ -28,7 +28,7 @@ class AgreementFactory extends Factory
             'content'=>$this->faker->text($maxNbChars = 500),
             'status' => 1,
             'slug'=> Str::slug($title),
-            'keywords'=>'Deneme, dkajshd, asjda, asdkahsd, asjgasd, axcmbnxzc, werıuuewro,',
+            'keywords'=>'Deneme, keywords, key, word, asjgasd, axcmbnxzc, werıuuewro,',
             'description'=>$this->faker->text(200)
         ];
     }
