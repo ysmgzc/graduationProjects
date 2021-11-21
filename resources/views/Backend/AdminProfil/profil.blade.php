@@ -2,30 +2,6 @@
 @section('title', 'Profil')
 @section('content')
     <div class="page-body">
-
-        <!-- Container-fluid starts-->
-        <div class="container-fluid">
-            <div class="page-header">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="page-header-left">
-                            <h3>Profile
-                                <small>Multikart Admin panel</small>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <ol class="breadcrumb pull-right">
-                            <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                            <li class="breadcrumb-item">Settings</li>
-                            <li class="breadcrumb-item active">Profile</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Container-fluid Ends-->
-
         <!-- Container-fluid starts-->
         <div class="container-fluid">
             <div class="row">
@@ -33,9 +9,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="profile-details text-center">
-                                <img src="{{asset('Backend/assets/images/dashboard/designer.jpg')}}" alt="" class="img-fluid img-90 rounded-circle blur-up lazyloaded">
-                                <h5 class="f-w-600 mb-0">John deo</h5>
-                                <span>johndeo@gmail.com</span>
+                                <img src="{{$user->image}}" alt="" class="img-fluid img-90 rounded-circle blur-up lazyloaded">
+                                <h5 class="f-w-600 mb-0">{{$user->name}}</h5>
+                                <span>{{$user->email}}</span>
                             </div>
 
                         </div>
@@ -57,24 +33,20 @@
                                         <table class="table table-borderless">
                                             <tbody>
                                             <tr>
-                                                <td>First Name:</td>
-                                                <td>Johan</td>
+                                                <td>Ad-Soyad:</td>
+                                                <td>{{$user->name}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Email:</td>
-                                                <td>johndeo@gmail.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mobile Number:</td>
-                                                <td>2124821463</td>
+                                                <td>{{$user->email}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Kayıt Tarihi:</td>
-                                                <td>Dec, 15 1993</td>
+                                                <td>{{$user->created_at}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Güncelleme Tarihi:</td>
-                                                <td>USA</td>
+                                                <td>{{$user->updated_at}}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -84,25 +56,29 @@
                                     <div class="account-setting">
                                         <h5 class="f-w-600">Ayarlar</h5>
                                         <div class="table-responsive profile-table">
-                                            <form action="">
-
+                                            <form action="{{route('admin.profil.update', $user->id)}}" method="post" >
+                                                @csrf
                                                 <table class="table table-borderless">
                                                     <tbody>
                                                     <tr>
                                                         <td>Ad Soyad:</td>
-                                                        <td><input type="text" class="form-control" style="border: none; width: 160px; height: 30px; background-color: #f8f8f9;" placeholder="Ad-Soyad"></td>
+                                                        <td><input type="text" name="name" class="form-control" style="border: none; width: 160px; height: 30px; background-color: #f8f8f9;" placeholder="Ad-Soyadınız"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Email:</td>
-                                                        <td><input type="email" class="form-control" style="border: none; width: 160px; height: 30px; background-color: #f8f8f9;" placeholder="Email Adresiniz"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Mobile Number:</td>
-                                                        <td><input type="text" class="form-control" style="border: none; width: 160px; height: 30px; background-color: #f8f8f9;" placeholder="Telefon Numaranız"></td>
+                                                        <td><input type="email" name="email" class="form-control" style="border: none; width: 160px; height: 30px; background-color: #f8f8f9;" placeholder="Email Adresiniz"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Şifre:</td>
-                                                        <td><input type="password" class="form-control" style="border: none; width: 160px; height: 30px; background-color: #f8f8f9;" placeholder="Yeni Şifreniz"></td>
+                                                        <td><input type="password" name="password" min="6" class="form-control" style="border: none; width: 160px; height: 30px; background-color: #f8f8f9;" placeholder="Yeni Şifreniz"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fotoğraf:</td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>

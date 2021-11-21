@@ -52,7 +52,7 @@
             </li>
             <li><a class="sidebar-header" href="#"><i data-feather="clipboard"></i><span>Sayfalar</span><i class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
-                    <li><a href="pages-list.html"><i class="fa fa-circle"></i>Sayfa Listesi</a></li>
+                    <li><a href="{{route('admin.page.list')}}"><i class="fa fa-circle"></i>Sayfa Listesi</a></li>
                     <li><a href="page-create.html"><i class="fa fa-circle"></i>Sayfa Oluştur</a></li>
                 </ul>
             </li>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Backend\Auth\RegisterController;
 use App\Http\Controllers\Backend\Auth\ResetPasswordController;
 use App\Http\Controllers\Backend\SiteSettings\SMTPSettingsController;
 use App\Http\Controllers\Backend\SiteSettings\SiteSettingController;
+use App\Http\Controllers\Backend\AdminProfilController;
+use App\Http\Controllers\Page\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,17 +51,11 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
     Route::get('site-ayarlari',[SiteSettingController::class, 'index'])->name('admin.site.settings');
     Route::post('site-ayarlari/{id}',[SiteSettingController::class, 'update'])->name('admin.site.settings.update');
 
-    Route::get('profil', function (){
-        return view('Backend.AdminProfil.profil');
-    })->name('admin.profil');
+    Route::get('profil', [AdminProfilController::class, 'index'])->name('admin.profil');
+    Route::post('profil/{id}', [AdminProfilController::class, 'update'])->name('admin.profil.update');
+
+    Route::get('sozlesme-listesi', [PageController::class, 'index'])->name('admin.page.list');
 });
-
-
-
-
-
-
-
 
 
 Route::get('/frontend', function () {
