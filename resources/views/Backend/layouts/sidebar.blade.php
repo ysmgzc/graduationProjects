@@ -52,8 +52,8 @@
             </li>
             <li><a class="sidebar-header" href="#"><i data-feather="clipboard"></i><span>Sayfalar</span><i class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
-                    <li><a href="{{route('admin.page.list')}}"><i class="fa fa-circle"></i>Sayfa Listesi</a></li>
-                    <li><a href="page-create.html"><i class="fa fa-circle"></i>Sayfa Oluştur</a></li>
+                    <li><a href="{{route('sozlesme.index')}}"><i class="fa fa-circle"></i>Sayfa Listesi</a></li>
+                    <li><a href="{{route('sozlesme.create')}}"><i class="fa fa-circle"></i>Sayfa Oluştur</a></li>
                 </ul>
             </li>
             <li><a class="sidebar-header" href="media.html"><i data-feather="camera"></i><span>Medya</span></a></li>

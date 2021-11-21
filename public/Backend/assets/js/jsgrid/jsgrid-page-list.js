@@ -28,7 +28,7 @@
                 align: "center",
                 width: 100
             },
-            { name: "Name", type: "text", width: 150 },
+            { name: "Sözleşme Adı", type: "text", width: 150 },
             { name: "Status", type: "number", width: 100 },
             { name: "Created on", type: "number", width: 100 }
         ]

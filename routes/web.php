@@ -54,7 +54,7 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
     Route::get('profil', [AdminProfilController::class, 'index'])->name('admin.profil');
     Route::post('profil/{id}', [AdminProfilController::class, 'update'])->name('admin.profil.update');
 
-    Route::get('sozlesme-listesi', [PageController::class, 'index'])->name('admin.page.list');
+    Route::resource('sozlesme', PageController::class);
 });
 
 

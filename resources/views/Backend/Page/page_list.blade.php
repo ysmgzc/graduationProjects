@@ -1,6 +1,5 @@
 @extends('Backend.layouts.master')
-@section('title', 'Sözlesme Listesi')
-@endsection
+@section('title') Sözleşmeler @endsection
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/vendors/jsgrid.css')}}">
 @endsection
@@ -14,16 +13,9 @@
                     <div class="col-lg-6">
                         <div class="page-header-left">
                             <h3>Sözleşme Listesi
-                                <small>Multikart Admin panel</small>
+                                <small>Site Yönetim Paneli</small>
                             </h3>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <ol class="breadcrumb pull-right">
-                            <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                            <li class="breadcrumb-item">Sözleşmeler</li>
-                            <li class="breadcrumb-item active">Sözleşme Listesi</li>
-                        </ol>
                     </div>
                 </div>
             </div>
@@ -36,10 +28,29 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Page Details</h5>
+                            <h5>Sözleşme Listesi</h5>
                         </div>
                         <div class="card-body">
-                            <div id="batchDelete" class="category-table order-table"></div>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Sözleşme Başlığı</th>
+                                    <th scope="col">Oluşturulma Tarihi</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Ayarlar</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -51,8 +62,4 @@
 @endsection
 @section('js')
 
-    <!-- Jsgrid js-->
-    <script src="{{asset('Backend/assets/js/jsgrid/jsgrid.min.js')}}"></script>
-    <script src="{{asset('Backend/assets/js/jsgrid/griddata-page-list.js')}}"></script>
-    <script src="{{asset('Backend/assets/js/jsgrid/jsgrid-page-list.js')}}"></script>
 @endsection
