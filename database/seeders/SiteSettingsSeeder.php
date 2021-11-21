@@ -14,13 +14,6 @@ class SiteSettingsSeeder extends Seeder
      */
     public function run()
     {
-        SiteSettings::create([
-            'id' => 1,
-            'title' => 'Bitirme Projesi',
-            'url' => 'http://localhost',
-            'statu' => '0',
-            'created_at'=>now(),
-            'updated_at'=>now()
-        ]);
+        SiteSettings::factory(1)->create();
     }
 }

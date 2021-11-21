@@ -14,13 +14,6 @@ class Smtp_settingsSeeder extends Seeder
      */
     public function run()
     {
-        Smtp_settings::create([
-            'id' => 1,
-            'server_name' => 'smtp.yandex.com.tr',
-            'username' => 'tugrandemirel@yazi-yorum.org',
-            'password' => 'yuqoojltfxtqdnbz',
-            'encryption' => 'tls',
-            'port' => '587',
-        ]);
+        Smtp_settings::factory(1)->create();
     }
 }

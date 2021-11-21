@@ -3,8 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Agreement;
-use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class AgreementFactory extends Factory
 {
@@ -22,8 +22,14 @@ class AgreementFactory extends Factory
      */
     public function definition()
     {
+        $title = $this->faker->title();
         return [
-
+            'title'=> $title,
+            'content'=>$this->faker->text($maxNbChars = 500),
+            'status' => 1,
+            'slug'=> Str::slug($title),
+            'keywords'=>'Deneme, dkajshd, asjda, asdkahsd, asjgasd, axcmbnxzc, werıuuewro,',
+            'description'=>$this->faker->text(200)
         ];
     }
 }
