@@ -1,7 +1,6 @@
-@extends('')
+@extends('Backend.layouts.master')
 @section('title') Sözleşme Oluştur @endsection
 @section('css')
-
 @endsection
 @section('content')
     <div class="page-body">
@@ -12,8 +11,8 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="page-header-left">
-                            <h3>Create Page
-                                <small>Multikart Admin panel</small>
+                            <h3>Sözleşme Oluştur
+                                <small>Site Yönetim Paneli</small>
                             </h3>
                         </div>
                     </div>
@@ -26,7 +25,7 @@
         <div class="container-fluid">
             <div class="card tab2-card">
                 <div class="card-header">
-                    <h5>Add Page</h5>
+                    <h5>Sözleşme Ekle</h5>
                 </div>
                 <div class="card-body">
                     <ul class="nav nav-tabs tab-coupon" id="myTab" role="tablist">
@@ -36,23 +35,23 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade active show" id="general" role="tabpanel" aria-labelledby="general-tab">
                             <form class="needs-validation">
-                                <h4>General</h4>
+                                <h4>Genel</h4>
                                 <div class="form-group row">
-                                    <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span> Name</label>
+                                    <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span> Sözleşme Adı</label>
                                     <div class="col-xl-8 col-md-7">
                                         <input class="form-control" id="validationCustom0" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group row editor-label">
-                                    <label class="col-xl-3 col-md-4"><span>*</span> Description</label>
+                                    <label class="col-xl-3 col-md-4"><span>*</span> Açıklaması</label>
                                     <div class="col-xl-8 col-md-7">
                                         <div class="editor-space">
-                                            <textarea id="editor1" name="editor1" cols="30" rows="10"></textarea>
+                                            <textarea id="" name="" cols="30" rows="10"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-xl-3 col-md-4">Status</label>
+                                    <label class="col-xl-3 col-md-4">Durum</label>
                                     <div class="col-xl-8 col-md-7">
                                         <div class="checkbox checkbox-primary ">
                                             <input id="checkbox-primary-2" type="checkbox" data-original-title="" title="">
@@ -66,7 +65,7 @@
                             <form class="needs-validation">
                                 <h4>SEO</h4>
                                 <div class="form-group row">
-                                    <label for="validationCustom2" class="col-xl-3 col-md-4">Meta Title</label>
+                                    <label for="validationCustom2" class="col-xl-3 col-md-4">Meta Keywords</label>
                                     <div class="col-xl-8 col-md-7">
                                         <input class="form-control" id="validationCustom2" type="text" >
                                     </div>

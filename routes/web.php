@@ -7,7 +7,7 @@ use App\Http\Controllers\Backend\Auth\ResetPasswordController;
 use App\Http\Controllers\Backend\SiteSettings\SMTPSettingsController;
 use App\Http\Controllers\Backend\SiteSettings\SiteSettingController;
 use App\Http\Controllers\Backend\AdminProfilController;
-use App\Http\Controllers\Page\PageController;
+use App\Http\Controllers\Backend\Page\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
