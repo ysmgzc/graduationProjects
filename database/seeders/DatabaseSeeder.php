@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(Smtp_settingsSeeder::class);
         $this->call(SiteSettingsSeeder::class);
+        $this->call(AgreementSeeder::class);
     }
 }
