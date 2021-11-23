@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\Agreement;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -14,7 +15,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('Backend.Page.page_list');
+        $agreement = Agreement::all();
+        return view('Backend.Page.page_list', compact('agreement'));
     }
 
     /**
@@ -57,7 +59,8 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $page = Agreement::where('id', base64_decode($id))->first();
+        return view('Backend.Page.page_edit', compact('page'));
     }
 
     /**
@@ -69,7 +72,28 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $page = Agreement::find($id);
+        if($page)
+        {
+            $page = Agreement::where('id', $id)->first();
+            $page->title = $request->title;
+            $page->content =  $request->content;
+            $page->status = ($request->status == 'on') ? 1 : 0 ;
+            $page->description = $request->description;
+            $page->keywords = $request->keywords;
+            $page->updated_at = now();
+
+            $page->save();
+
+            toastSuccess('Başarılı bir şekilde güncelleme işlemi gerçekleştirilmiştir.');
+            return redirect()->route('sozlesme.index');
+        }
+        else
+        {
+            toastError('Böyle bir sayfa bulunamadı');
+            return redirect()->back();
+        }
+
     }
 
     /**
@@ -80,6 +104,18 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $page = Agreement::find(base64_decode($id));
+        if ($page)
+        {
+            $page = Agreement::where('id', base64_decode(id))->first();
+            $page->delete();
+            toastSuccess('Başarılı bir şekilde silme işlemi gerçekleştirildi');
+            return redirect()->route('sozlesme.index');
+        }
+        else
+        {
+            toastError('Böyle bir sayfa bulunamadı');
+            return redirect()->back();
+        }
     }
 }

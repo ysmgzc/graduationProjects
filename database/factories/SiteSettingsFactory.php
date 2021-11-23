@@ -29,6 +29,14 @@ class SiteSettingsFactory extends Factory
             'statu' => '1',
             'created_at'=>now(),
             'updated_at'=>now()
+    // abi şu an bütün herşeyi sildi baştan migrate etti
+//            bunları bende yaptım  ama seed eklerken ya da farklı tabloya bir veri eklerken gümülyor reflesh ederken
+//        tüm verileri sıfırladığın için kullanıcı yok login yapamayız
+        // kayıt oluştur abi bitane
+//             1 dk kerem hoca geldi bişiler diyor
+//         sen kafana göre takılabilir misin hocaya bir bakıp geliyorum ben
+        // tamamdır abi
+//            sen istersen hataya bakın. gelirim ben okey
         ];
     }
 }

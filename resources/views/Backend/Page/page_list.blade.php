@@ -36,6 +36,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Sözleşme Başlığı</th>
                                     <th scope="col">Oluşturulma Tarihi</th>
+                                    <th scope="col">Güncelleme Tarihi</th>
                                     <th scope="col">Durum</th>
                                     <th scope="col">Ayarlar</th>
                                 </tr>
@@ -43,13 +44,14 @@
                                 <tbody>
                                 @foreach($agreement as $value)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row">{{$loop->iteration}}</th>
                                     <td>{{$value->title}}</td>
                                     <td>{{$value->created_at}}</td>
-                                    <td>{{$value->status}}</td>
-                                   <td>
-                                       <button style="width: 15px !important;" type="button" class="btn btn-success"><i class="fas fa-pen"></i></button>
-                                       <button style="width: 15px !important;" type="button" class="btn btn-success"><i class="fas fa-trash"></i></button>
+                                    <td>{{$value->updated_at}}</td>
+                                    <td><button class="@if($value->status == 0)  btn-primary @else btn-success @endif  btn-sm"  disabled>@if($value->status == 0)  İnaktif @else Aktif @endif</button></td>
+                                   <td >
+                                       <a href="{{route('sozlesme.edit', base64_encode($value->id))}}" title="Düzenle" class="btn btn-sm"><i style="font-size: 10px; color: green;" class="fas fa-pen" ></i></a>
+                                       <a href="{{route('sozlesme.destroy', base64_encode($value->id))}}" title="Sil" class="btn btn-sm"><i class="fas fa-trash" style="font-size: 10px; color: red;"></i></a>
                                    </td>
                                 </tr>
                                 @endforeach

@@ -14,13 +14,13 @@ class AgreementTable extends Migration
     public function up()
     {
         Schema::create('agreement', function (Blueprint $table) {
-            $table->integer('id', false, false);
+            $table->increments('id');
             $table->string('title');
-            $table->string('content');
+            $table->longText('content');
             $table->tinyInteger('status')->default(1);
             $table->string('slug');
             $table->string('keywords')->nullable();
-            $table->string('description')->nullable();
+            $table->mediumText('description')->nullable();
             $table->timestamps();
         });
     }

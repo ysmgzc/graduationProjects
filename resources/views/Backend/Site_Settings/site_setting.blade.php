@@ -38,7 +38,7 @@
                                     <div class="digital-add needs-validation">
                                         <div class="form-group">
                                             <label for="validationCustom01" class="col-form-label pt-0"><span>*</span> Başlık</label>
-                                            <input class="form-control" name="title" id="validationCustom01" type="text" required="" value="{{$site_settings->title}}">
+                                            <input class="form-control" name="title" id="validationCustom01" type="text" required="" value="{{ $site_settings->title }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="validationCustomtitle" class="col-form-label pt-0"><span>*</span> URL</label>
