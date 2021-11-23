@@ -29,6 +29,8 @@
                         <div class="card-header">
                             <h5>Sözleşme Listesi</h5>
                         </div>
+                        <div>
+                            <a href="{{route('sozlesme.create')}}">EKLE</a></div>
                         <div class="card-body">
                             <table class="table">
                                 <thead>

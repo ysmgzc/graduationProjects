@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\Page;
 use App\Http\Controllers\Controller;
 use App\Models\Agreement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class PageController extends Controller
 {
@@ -37,7 +39,21 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Auth::check())
+        {
+            $page = new Agreement;
+            $page->title = $request->title;
+            $page->content =  $request->content;
+            $page->slug = Str::slug($request->title);
+            $page->status = ($request->status == 'on') ? 1 : 0 ;
+            $page->description = $request->description;
+            $page->keywords = $request->keywords;
+            $page->created_at = now();
+
+            $page->save();
+            toastSuccess('Başarılı bir şekilde oluşturuldu');
+            return redirect()->route('sozlesme.index');
+        }
     }
 
     /**

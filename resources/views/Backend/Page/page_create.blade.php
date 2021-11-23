@@ -32,56 +32,56 @@
                         <li class="nav-item"><a class="nav-link active show" id="general-tab" data-bs-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true" data-original-title="" title="">General</a></li>
                         <li class="nav-item"><a class="nav-link" id="seo-tabs" data-bs-toggle="tab" href="#seo" role="tab" aria-controls="seo" aria-selected="false" data-original-title="" title="">SEO</a></li>
                     </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade active show" id="general" role="tabpanel" aria-labelledby="general-tab">
-                            <form class="needs-validation">
-                                <h4>Genel</h4>
-                                <div class="form-group row">
-                                    <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span> Sözleşme Adı</label>
-                                    <div class="col-xl-8 col-md-7">
-                                        <input class="form-control" id="validationCustom0" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group row editor-label">
-                                    <label class="col-xl-3 col-md-4"><span>*</span> Açıklaması</label>
-                                    <div class="col-xl-8 col-md-7">
-                                        <div class="editor-space">
-                                            <textarea id="" name="" cols="30" rows="10"></textarea>
+
+                    <form class="needs-validation" action="{{route('sozlesme.store')}}" method="POST">
+                        @csrf
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade active show" id="general" role="tabpanel" aria-labelledby="general-tab">
+                                    <h4>Genel</h4>
+                                    <div class="form-group row">
+                                        <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span> Sözleşme Adı</label>
+                                        <div class="col-xl-8 col-md-7">
+                                            <input class="form-control" id="validationCustom0" name="title" type="text" required>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-xl-3 col-md-4">Durum</label>
-                                    <div class="col-xl-8 col-md-7">
-                                        <div class="checkbox checkbox-primary ">
-                                            <input id="checkbox-primary-2" type="checkbox" data-original-title="" title="">
-                                            <label for="checkbox-primary-2">Enable the Page</label>
+                                    <div class="form-group row editor-label">
+                                        <label class="col-xl-3 col-md-4"><span>*</span> Açıklaması</label>
+                                        <div class="col-xl-8 col-md-7">
+                                            <div class="editor-space">
+                                                <textarea required name="content" cols="30" rows="10"></textarea>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tabs">
-                            <form class="needs-validation">
-                                <h4>SEO</h4>
-                                <div class="form-group row">
-                                    <label for="validationCustom2" class="col-xl-3 col-md-4">Meta Keywords</label>
-                                    <div class="col-xl-8 col-md-7">
-                                        <input class="form-control" id="validationCustom2" type="text" >
+                                    <div class="form-group row">
+                                        <label class="col-xl-3 col-md-4">Durum</label>
+                                        <div class="col-xl-8 col-md-7">
+                                            <div class=" ">
+                                                <input id="checkbox-primary-2" type="checkbox" data-original-title="" title="" name="status">
+                                                <label for="checkbox-primary-2">Sayfanın Aktifliği</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row editor-label">
-                                    <label class="col-xl-3 col-md-4">Meta Description</label>
-                                    <div class="col-xl-8 col-md-7">
-                                        <textarea rows="4" class="form-control"></textarea>
+                            </div>
+                            <div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tabs">
+                                    <h4>SEO</h4>
+                                    <div class="form-group row">
+                                        <label for="validationCustom2" class="col-xl-3 col-md-4">Meta Keywords</label>
+                                        <div class="col-xl-8 col-md-7">
+                                            <input class="form-control" id="validationCustom2" type="text" name="keywords" required>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                    <div class="form-group row editor-label">
+                                        <label class="col-xl-3 col-md-4">Meta Description</label>
+                                        <div class="col-xl-8 col-md-7">
+                                            <textarea rows="4" class="form-control" required name="description"></textarea>
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
