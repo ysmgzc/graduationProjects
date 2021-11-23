@@ -1,5 +1,5 @@
 @extends('Backend.layouts.master')
-@section('title') Menüler @endsection
+@section('title') Menü Listesi @endsection
 @section('css')
 @endsection
 @section('content')
