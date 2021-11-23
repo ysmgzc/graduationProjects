@@ -42,7 +42,7 @@
                                 </thead>
                                 <tbody>
 
-                                @if(!empty($menus))
+                                @if(empty($menus))
                                     <div class="alert alert-danger" role="alert">
                                         Henüz menü-kategori içeriği yoktur.
                                     </div>
