@@ -104,10 +104,9 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-        $page = Agreement::find(base64_decode($id));
+        $page = Agreement::find($id);
         if ($page)
         {
-            $page = Agreement::where('id', base64_decode(id))->first();
             $page->delete();
             toastSuccess('Başarılı bir şekilde silme işlemi gerçekleştirildi');
             return redirect()->route('sozlesme.index');
