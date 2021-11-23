@@ -19,6 +19,7 @@ class CreateMenuTable extends Migration
             $table->string('slug');
             $table->string('category');
             $table->integer('subcategory')->default(0)->comment('0 olanlar ana kategori');
+            $table->tinyInteger('status')->default(1)->comment('Menu aktif inaktif durumu');
             $table->timestamps();
         });
     }
