@@ -59,8 +59,9 @@
             <li><a class="sidebar-header" href="media.html"><i data-feather="camera"></i><span>Medya</span></a></li>
             <li><a class="sidebar-header" href="#"><i data-feather="align-left"></i><span>Menü</span><i class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
-                    <li><a href="menu-list.html"><i class="fa fa-circle"></i>Menü Listesi</a></li>
-                    <li><a href="create-menu.html"><i class="fa fa-circle"></i>Menü Oluştur</a></li>
+                    <li><a href="{{route('menu.index')}}"><i class="fa fa-circle"></i>Menü Listesi</a></li>
+                    <li><a href="{{route('menu.create')}}"><i class="fa fa-circle"></i>Ana Menü Oluştur</a></li>
+                    <li><a href="create-menu.html"><i class="fa fa-circle"></i>Alt Menü Oluştur</a></li>
                 </ul>
             </li>
             <li><a class="sidebar-header" href="#"><i data-feather="user-plus"></i><span>Kullanıcılar</span><i class="fa fa-angle-right pull-right"></i></a>

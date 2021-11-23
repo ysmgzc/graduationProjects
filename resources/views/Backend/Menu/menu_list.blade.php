@@ -41,19 +41,27 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($agreement as $value)
-                                    <tr>
-                                        <th scope="row">{{$loop->iteration}}</th>
-                                        <td>{{$value->title}}</td>
-                                        <td>{{$value->created_at}}</td>
-                                        <td>{{$value->updated_at}}</td>
-                                        <td><button class="@if($value->status == 0)  btn-primary @else btn-success @endif  btn-sm"  disabled>@if($value->status == 0)  İnaktif @else Aktif @endif</button></td>
-                                        <td >
-                                            <a href="{{route('sozlesme.edit', base64_encode($value->id))}}" title="Düzenle" class="btn btn-sm"><i style="font-size: 10px; color: green;" class="fas fa-pen" ></i></a>
-                                            <a href="{{route('sozlesme.destroy', $value->id)}}" title="Sil" class="btn btn-sm"><i class="fas fa-trash" style="font-size: 10px; color: red;"></i></a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+
+                                @if(!empty($menus))
+                                    <div class="alert alert-danger" role="alert">
+                                        Henüz menü-kategori içeriği yoktur.
+                                    </div>
+                                @else
+                                    @foreach($menus as $value)
+                                        <tr>
+                                            <th scope="row">{{$loop->iteration}}</th>
+                                            <td>{{$value->title}}</td>
+                                            <td>{{$value->created_at}}</td>
+                                            <td>{{$value->updated_at}}</td>
+                                            <td><button class="@if($value->status == 0)  btn-primary @else btn-success @endif  btn-sm"  disabled>@if($value->status == 0)  İnaktif @else Aktif @endif</button></td>
+                                            <td >
+                                                <a href="{{route('menu.edit', base64_encode($value->id))}}" title="Düzenle" class="btn btn-sm"><i style="font-size: 10px; color: green;" class="fas fa-pen" ></i></a>
+                                                <a href="{{route('menu.destroy', $value->id)}}" title="Sil" class="btn btn-sm"><i class="fas fa-trash" style="font-size: 10px; color: red;"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    @endif
+
                                 </tbody>
                             </table>
                         </div>
