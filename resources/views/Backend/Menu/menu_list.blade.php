@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="page-header-left">
-                            <h3>Sözleşme Listesi
+                            <h3>Menü Listesi
                                 <small>Site Yönetim Paneli</small>
                             </h3>
                         </div>
@@ -26,14 +26,14 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Sözleşme Listesi</h5>
+                            <h5>Menü Listesi</h5>
                         </div>
                         <div class="card-body">
                             <table class="table">
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Sözleşme Başlığı</th>
+                                    <th scope="col">Menü Başlığı</th>
                                     <th scope="col">Oluşturulma Tarihi</th>
                                     <th scope="col">Güncelleme Tarihi</th>
                                     <th scope="col">Durum</th>
