@@ -57,6 +57,11 @@
 
 <!--script admin-->
 <script src="{{asset('Backend/assets/js/admin-script.js')}}"></script>
+
+<!-- fontawesome -->
+<script src="{{asset('Backend/assets/js/all.min.js')}}"></script>
+<script src="{{asset('Backend/assets/js/fontawesome.js')}}"></script>
+
 @yield('js')
 
 @jquery

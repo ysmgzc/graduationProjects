@@ -21,7 +21,6 @@
             </div>
         </div>
         <!-- Container-fluid Ends-->
-
         <!-- Container-fluid starts-->
         <div class="container-fluid">
             <div class="row">
@@ -42,13 +41,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($agreement as $value)
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
+                                    <td>{{$value->title}}</td>
+                                    <td>{{$value->created_at}}</td>
+                                    <td>{{$value->status}}</td>
+                                   <td>
+                                       <button style="width: 15px !important;" type="button" class="btn btn-success"><i class="fas fa-pen"></i></button>
+                                       <button style="width: 15px !important;" type="button" class="btn btn-success"><i class="fas fa-trash"></i></button>
+                                   </td>
                                 </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -61,5 +65,4 @@
     </div>
 @endsection
 @section('js')
-
 @endsection

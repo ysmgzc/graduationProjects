@@ -20,6 +20,7 @@
 
     <!-- Font Awesome-->
     <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/vendors/fontawesome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/vendors/all.min.css')}}">
 
     <!-- Flag icon-->
     <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/vendors/flag-icon.css')}}">
