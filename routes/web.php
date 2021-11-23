@@ -57,6 +57,8 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
     Route::get('sozlesme/create', [PageController::class, 'create'])->name('sozlesme.create');
     Route::get('sozlesme/{id}', [PageController::class, 'destroy'])->name('sozlesme.destroy');
     Route::resource('sozlesme', PageController::class);
+
+
 });
 
 
