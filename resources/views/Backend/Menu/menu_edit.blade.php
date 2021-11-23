@@ -1,6 +1,6 @@
 @extends('')
 @section('title')
-    Ana Menü- Ana Kategori Oluştur
+    Ana Menü- Ana Kategori Düzenle
 @endsection
 @section('css')
 @endsection
@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="page-header-left">
-                            <h3>Ana Menü Oluştur
+                            <h3>Ana Menü Düzenle
                                 <small>Admin Yönetim Paneli</small>
                             </h3>
                         </div>
@@ -30,7 +30,7 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Ana Menü Ekle</h5>
+                            <h5>Ana Menü Düzenle</h5>
                         </div>
                         <div class="card-body">
                             <form class="needs-validation">
