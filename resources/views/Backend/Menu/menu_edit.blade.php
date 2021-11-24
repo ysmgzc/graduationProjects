@@ -1,4 +1,4 @@
-@extends('')
+@extends('Backend.layouts.master')
 @section('title')
     Ana Menü- Ana Kategori Düzenle
 @endsection
@@ -43,8 +43,8 @@
                                 <div class="form-group row">
                                     <label class="col-xl-3 col-md-4">Aktiflik Durumu</label>
                                     <div class="col-xl-9 col-md-8">
-                                        <div class="checkbox checkbox-primary">
-                                            <input id="checkbox-primary-2" name="status" type="checkbox" data-original-title="" title="">
+                                        <div class="">
+                                            <input id="checkbox-primary-2" name="status" type="checkbox" checked data-original-title="" title="">
                                         </div>
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-@extends('')
+@extends('Backend.layouts.master')
 @section('title')
     Ana Menü- Ana Kategori Oluştur
 @endsection
