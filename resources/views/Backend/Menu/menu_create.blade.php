@@ -31,7 +31,8 @@
                             <h5>Ana Menü Ekle</h5>
                         </div>
                         <div class="card-body">
-                            <form class="needs-validation">
+                            <form class="needs-validation" action="{{route('menu.store')}}" method="POST">
+                                @csrf
                                 <div class="form-group row">
                                     <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span>Ana Menü Adı</label>
                                     <div class="col-md-8">
@@ -46,7 +47,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary d-block">Kaydet</button>
+                                <button type="submit" class="btn btn-primary d-block">Kaydet</button>
                             </form>
                         </div>
                     </div>

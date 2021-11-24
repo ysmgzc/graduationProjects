@@ -37,7 +37,21 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $isExists = Menu::where('slug',Str::slug($request->title))->first();
+        if ($isExists)
+        {
+            toastError('Böyle bir kategori mevcuttur');
+            return redirect()->back();
+        }
+        $menu = new Menu;
+        $menu->title = $request->title;
+        $menu->slug = Str::slug($request->title);
+        $menu->subcategory = 0;
+        $menu->status = ($request->status == 'on') ? 1 : 0 ;
+        $menu->save();
+        toastSuccess('Başarılı bir şekilde ekleme işlemini gerçekleştirdiniz.');
+        return redirect()->route('menu.index');
+
     }
 
     /**
