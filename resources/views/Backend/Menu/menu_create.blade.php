@@ -5,9 +5,7 @@
 @section('css')
 @endsection
 @section('content')
-
     <div class="page-body">
-
         <!-- Container-fluid starts-->
         <div class="container-fluid">
             <div class="page-header">

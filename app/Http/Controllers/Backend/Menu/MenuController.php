@@ -24,7 +24,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        return view('Backend.Menu.menu_create');
     }
 
     /**
