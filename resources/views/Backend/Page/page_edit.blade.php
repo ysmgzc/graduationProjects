@@ -57,7 +57,7 @@
                                     <label class="col-xl-3 col-md-4" >Durum</label>
                                     <div class="col-xl-8 col-md-7">
                                         <div class="">
-                                            <input  name="status" id="checkbox-primary-2" @if($page->status == 1) checked @endif  type="checkbox" data-original-title="" title="Aktif">
+                                            <input  name="status" id="checkbox-primary-2" @if($page->status == 1) checked @endif  type="checkbox" data-original-title="" title="Aktiflik Durumu">
                                             <label for="checkbox-primary-2" > @if($page->status == 1) Sözleşme Aktif @else Sözleşme Aktif Değil @endif </label>
                                         </div>
                                     </div>

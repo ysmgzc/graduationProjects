@@ -44,7 +44,8 @@
                                     <label class="col-xl-3 col-md-4">Aktiflik Durumu</label>
                                     <div class="col-xl-9 col-md-8">
                                         <div class="">
-                                            <input id="checkbox-primary-2" name="status" type="checkbox" checked data-original-title="" title="">
+                                            <input id="checkbox-primary-2" name="status" type="checkbox" checked data-original-title="" title="Aktiflik Du">
+                                            <label for="checkbox-primary-2" > Menü-Kategori Aktif</label>
                                         </div>
                                     </div>
                                 </div>
