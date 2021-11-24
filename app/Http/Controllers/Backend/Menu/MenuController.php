@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backend\Menu;
 
 use App\Http\Controllers\Controller;
+use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class MenuController extends Controller
 {
@@ -57,6 +59,8 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
+        $menu = Menu::where('id', base64_decode($id))->first();
+        return view('Backend.Menu.menu_edit', compact('menu'));
         //
     }
 
@@ -69,7 +73,37 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        // ilgili kategorimiz disinda demek(belirtilen id dışındaki veriler üzerinde arama yapar ve sonuç döndürür) whereNotIn
+        $isSlug = Menu::where('slug',Str::slug($request->slug))->whereNotIn('id', [$request->id])->first();
+        $isTitle = Menu::where('title',Str::slug($request->title))->whereNotIn('id', [$request->id])->first();
+        if ($isTitle or $isSlug)
+        {
+            toastr()->error($request->title." adında bir kategori var.");
+            return redirect()->back();
+        }
+
+        $menu = Menu::find($id);
+        if($menu)
+        {
+            $menu = Menu::where('id', $id)->first();
+            $menu->title = $request->title;
+            $menu->slug = Str::slug($request->title);
+            $menu->subcategory = 0;
+            $menu->status = ($request->status == 'on') ? 1 : 0 ;
+            $menu->updated_at = now();
+
+            $menu->save();
+
+            toastSuccess('Başarılı bir şekilde güncelleme işlemi gerçekleştirilmiştir.');
+            return redirect()->route('menu.index');
+        }
+        else
+        {
+            toastError('Böyle bir sayfa bulunamadı');
+            return redirect()->back();
+        }return 1;
     }
 
     /**

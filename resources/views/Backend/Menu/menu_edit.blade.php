@@ -33,23 +33,25 @@
                             <h5>Ana Menü Düzenle</h5>
                         </div>
                         <div class="card-body">
-                            <form class="needs-validation">
+                            <form class="needs-validation" action="{{route('menu.update', $menu->id)}}" method="POST">
+                                @csrf
+                                @method('PUT')
                                 <div class="form-group row">
                                     <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span>Ana Menü Adı</label>
                                     <div class="col-md-8">
-                                        <input class="form-control" id="validationCustom0" type="text" name="title" required="">
+                                        <input class="form-control" id="validationCustom0" type="text" name="title" required="" value="{{$menu->title}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-xl-3 col-md-4">Aktiflik Durumu</label>
                                     <div class="col-xl-9 col-md-8">
                                         <div class="">
-                                            <input id="checkbox-primary-2" name="status" type="checkbox" checked data-original-title="" title="Aktiflik Du">
-                                            <label for="checkbox-primary-2" > Menü-Kategori Aktif</label>
+                                            <input id="checkbox-primary-2" name="status" type="checkbox" @if($menu->status == 1) checked @endif data-original-title="" title="Aktiflik Du">
+                                            <label for="checkbox-primary-2" > @if($menu->status == 1) Sözleşme Aktif @else Sözleşme Aktif Değil @endif </label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary d-block">Kaydet</button>
+                                <button type="submit" class="btn btn-primary d-block">Kaydet</button>
                             </form>
                         </div>
                     </div>
