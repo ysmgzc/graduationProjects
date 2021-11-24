@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\SiteSettings\SiteSettingController;
 use App\Http\Controllers\Backend\AdminProfilController;
 use App\Http\Controllers\Backend\Page\PageController;
 use App\Http\Controllers\Backend\Menu\MenuController;
+use App\Http\Controllers\Backend\Menu\SubmenuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,6 +63,10 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
     Route::get('menu/create', [MenuController::class, 'create'])->name('menu.create');
     Route::get('menu/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
     Route::resource('menu', MenuController::class);
+
+    Route::get('submenu/create', [SubmenuController::class, 'create'])->name('submenu.create');
+    Route::get('submenu/{id}', [SubmenuController::class, 'destroy'])->name('submenu.destroy');
+    Route::resource('submenu', SubmenuController::class);
 
 
 });
