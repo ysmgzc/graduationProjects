@@ -90,8 +90,8 @@ class MenuController extends Controller
 
 
         // ilgili kategorimiz disinda demek(belirtilen id dışındaki veriler üzerinde arama yapar ve sonuç döndürür) whereNotIn
-        $isSlug = Menu::where('slug',Str::slug($request->slug))->whereNotIn('id', [$request->id])->first();
-        $isTitle = Menu::where('title',($request->title))->whereNotIn('id', [$request->id])->first();
+        $isSlug = Menu::where('slug',Str::slug($request->slug))->whereNotIn('id', [$id])->first();
+        $isTitle = Menu::where('title',$request->title)->whereNotIn('id', [$id])->first();
         if ($isTitle or $isSlug)
         {
             toastr()->error($request->title." adında bir kategori var.");
