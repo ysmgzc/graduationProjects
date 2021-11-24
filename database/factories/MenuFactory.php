@@ -24,7 +24,6 @@ class MenuFactory extends Factory
         return [
             'title' => 'Erkek Giyim',
             'slug' => 'erkek-giyim',
-            'category' => 'Erkek',
             'status' => 1
         ];
     }
