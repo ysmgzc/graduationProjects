@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\Auth\RegisterController;
 use App\Http\Controllers\Backend\Auth\ResetPasswordController;
 use App\Http\Controllers\Backend\SiteSettings\SMTPSettingsController;
 use App\Http\Controllers\Backend\SiteSettings\SiteSettingController;
+use App\Http\Controllers\Backend\SiteSettings\ContactController;
 use App\Http\Controllers\Backend\AdminProfilController;
 use App\Http\Controllers\Backend\Page\PageController;
 use App\Http\Controllers\Backend\Menu\MenuController;
@@ -52,6 +53,9 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
 
     Route::get('site-ayarlari',[SiteSettingController::class, 'index'])->name('admin.site.settings');
     Route::post('site-ayarlari/{id}',[SiteSettingController::class, 'update'])->name('admin.site.settings.update');
+
+    Route::get('iletisim-ayarlari',[ContactController::class, 'index'])->name('admin.contact.settings');
+    Route::post('iletisim-ayarlari/{id}',[ContactController::class, 'update'])->name('admin.contact.settings.update');
 
     Route::get('profil', [AdminProfilController::class, 'index'])->name('admin.profil');
     Route::post('profil/{id}', [AdminProfilController::class, 'update'])->name('admin.profil.update');

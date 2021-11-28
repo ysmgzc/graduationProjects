@@ -88,6 +88,7 @@
                     <li><a href="{{route('admin.profil')}}"><i class="fa fa-circle"></i>Profil</a></li>
                     <li><a href="{{route('admin.site.settings')}}"><i class="fa fa-circle"></i>Site Ayarları</a></li>
                     <li><a href="{{route('admin.site.mail.settings')}}"><i class="fa fa-circle"></i>Mail Ayarları</a></li>
+                    <li><a href="{{route('admin.contact.settings')}}"><i class="fa fa-circle"></i>İletişim Ayarları</a></li>
                 </ul>
             </li>
             <li><a class="sidebar-header" href="invoice.html"><i data-feather="archive"></i><span>Kesilen Faturalar</span></a>

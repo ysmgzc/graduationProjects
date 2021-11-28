@@ -13,7 +13,7 @@ class SMTPSettingsController extends Controller
     {
         $smtp_settings = Smtp_settings::where('id', 1)->first();
 //        dd($smtp_settings);
-        return view('Backend.Site Settings.site_mail_setting', compact('smtp_settings'));
+        return view('Backend.Site_Settings.site_mail_setting', compact('smtp_settings'));
     }
 
     public function update(Request $request, $id)
