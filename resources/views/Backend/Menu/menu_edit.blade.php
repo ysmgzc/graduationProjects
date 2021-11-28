@@ -47,7 +47,7 @@
                                     <div class="col-xl-9 col-md-8">
                                         <div class="">
                                             <input id="checkbox-primary-2" name="status" type="checkbox" @if($menu->status == 1) checked @endif data-original-title="" title="Aktiflik Durumu">
-                                            <label for="checkbox-primary-2" > @if($menu->status == 1) Sözleşme Aktif @else Sözleşme Aktif Değil @endif </label>
+                                            <label for="checkbox-primary-2" > @if($menu->status == 1) Menü Aktif @else Menü Aktif Değil @endif </label>
                                         </div>
                                     </div>
                                 </div>

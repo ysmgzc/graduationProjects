@@ -31,12 +31,13 @@
                             <h5>Alt Menü Düzenle</h5>
                         </div>
                         <div class="card-body">
-                            <form class="needs-validation" action="{{route('submenu.store')}}" method="POST">
+                            <form class="needs-validation" action="{{route('submenu.update', $submenu->id)}}" method="POST">
+                                @method('PUT')
                                 @csrf
                                 <div class="form-group row">
                                     <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span>Alt Menü Adı</label>
                                     <div class="col-md-8">
-                                        <input class="form-control" id="validationCustom0" type="text" name="title" required="">
+                                        <input class="form-control" id="validationCustom0" type="text" name="title" value="{{$submenu->title}}" required="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -44,7 +45,7 @@
                                     <div class="col-md-8">
                                         <select name="subcategory" id="">
                                             @foreach($menu as $value)
-                                                <option value="{{$value->id}}">{{$value->title}}</option>
+                                                <option value="{{$value->id}}" @if($value->id == $submenu->subcategory) selected @endif>{{$value->title}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -53,7 +54,8 @@
                                     <label class="col-xl-3 col-md-4">Aktiflik Durumu</label>
                                     <div class="col-xl-9 col-md-8">
                                         <div class="">
-                                            <input id="checkbox-primary-2" name="status" type="checkbox" data-original-title="" title="">
+                                            <input id="checkbox-primary-2" name="status" type="checkbox" data-original-title="" title="" @if($submenu->status ==1) checked @endif>
+                                            <label for="checkbox-primary-2" > @if($submenu->status == 1) Menü Aktif @else Menü Aktif Değil @endif </label>
                                         </div>
                                     </div>
                                 </div>

@@ -16,6 +16,7 @@ class SubmenuController extends Controller
      */
     public function index()
     {
+        return view('Backend.Menu.submenu_list');
     }
 
     /**
@@ -54,7 +55,7 @@ class SubmenuController extends Controller
         $submenu->save();
 
         toastSuccess('Güncelleme işlemi başarılı bir şekilde gerçekleştirilmiştir');
-        return redirect()->route('menu.index');
+        return redirect()->route('submenu.index');
     }
 
     /**
@@ -76,7 +77,9 @@ class SubmenuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $submenu = Menu::where('id', base64_decode($id))->first();
+        $menu = Menu::where('subcategory', 0)->get();
+        return view('Backend.Menu.submenu_edit', compact('submenu', 'menu'));
     }
 
     /**
@@ -101,7 +104,7 @@ class SubmenuController extends Controller
         if($menu)
         {
             $menu = Menu::where('id', $request->subcategory)->first();
-            $submenu = new Menu;
+            $submenu = Menu::where('id', $id)->first();
             $submenu->title = $request->title;
             $submenu->slug = $menu->slug.'-'.Str::slug($request->title);
             $submenu->subcategory = $request->subcategory;
@@ -110,7 +113,7 @@ class SubmenuController extends Controller
             $submenu->save();
 
             toastSuccess('Başarılı bir şekilde güncelleme işlemi gerçekleştirilmiştir.');
-            return redirect()->route('menu.index');
+            return redirect()->route('submenu.index');
         }
         else
         {

@@ -61,6 +61,7 @@
                 <ul class="sidebar-submenu">
                     <li><a href="{{route('menu.index')}}"><i class="fa fa-circle"></i>Menü Listesi</a></li>
                     <li><a href="{{route('menu.create')}}"><i class="fa fa-circle"></i>Ana Menü Oluştur</a></li>
+                    <li><a href="{{route('submenu.index')}}"><i class="fa fa-circle"></i>Alt Menü Listesi</a></li>
                     <li><a href="{{route('submenu.create')}}"><i class="fa fa-circle"></i>Alt Menü Oluştur</a></li>
                 </ul>
             </li>

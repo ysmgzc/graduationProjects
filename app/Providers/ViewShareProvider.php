@@ -29,7 +29,8 @@ class ViewShareProvider extends ServiceProvider
         if (!$this->app->runningInConsole()) {
             view()->share('site_settings', SiteSettings::where('id', 1)->first());
             view()->share('contacts', Contact::where('id', 1)->first());
-            view()->share('menus', Menu::all());
+            view()->share('menus', Menu::where('subcategory', 0)->get());
+            view()->share('submenus', Menu::where('subcategory', '!=', 0)->get());
         }
     }
 }
