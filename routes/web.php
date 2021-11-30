@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\AdminProfilController;
 use App\Http\Controllers\Backend\Page\PageController;
 use App\Http\Controllers\Backend\Menu\MenuController;
 use App\Http\Controllers\Backend\Menu\SubmenuController;
+use App\Http\Controllers\Backend\Brand\BrandController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,6 +72,10 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
     Route::get('submenu/create', [SubmenuController::class, 'create'])->name('submenu.create');
     Route::get('submenu/{id}', [SubmenuController::class, 'destroy'])->name('submenu.destroy');
     Route::resource('submenu', SubmenuController::class);
+
+    Route::get('marka/create', [BrandController::class, 'create'])->name('marka.create');
+    Route::get('marka/{id}', [BrandController::class, 'destroy'])->name('marka.destroy');
+    Route::resource('marka', BrandController::class);
 
 
 });

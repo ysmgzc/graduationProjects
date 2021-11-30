@@ -19,7 +19,7 @@
                         </a>
                         <ul class="sidebar-submenu">
                             <li><a href="category-digital.html"><i class="fa fa-circle"></i>Ürün Ekle</a></li>
-                            <li><a href="category-digitalsub.html"><i class="fa fa-circle"></i>Ürün Güncelle</a></li>
+                            <li><a href="category-digitalsub.html"><i class="fa fa-circle"></i>Ürün Listesi</a></li>
                         </ul>
                     </li>
                     <li>
@@ -27,8 +27,8 @@
                             <span>Marka İşlemleri</span> <i class="fa fa-angle-right pull-right"></i>
                         </a>
                         <ul class="sidebar-submenu">
-                            <li><a href="category.html"><i class="fa fa-circle"></i>Marka Ekle</a></li>
-                            <li><a href="category-sub.html"><i class="fa fa-circle"></i>Marka Listesi</a></li>
+                            <li><a href="{{route('marka.create')}}"><i class="fa fa-circle"></i>Marka Ekle</a></li>
+                            <li><a href="{{route('marka.index')}}"><i class="fa fa-circle"></i>Marka Listesi</a></li>
                         </ul>
                     </li>
                 </ul>

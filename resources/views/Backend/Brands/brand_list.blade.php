@@ -55,8 +55,8 @@
                                             <td>{{$value->created_at}}</td>
                                             <td>{{$value->updated_at}}</td>
                                             <td >
-                                                <a href="{{route('menu.edit', base64_encode($value->id))}}" title="Düzenle" class="btn btn-sm"><i style="font-size: 10px; color: green;" class="fas fa-pen" ></i></a>
-                                                <a href="{{route('menu.destroy', $value->id)}}" title="Sil" class="btn btn-sm"><i class="fas fa-trash" style="font-size: 10px; color: red;"></i></a>
+                                                <a href="{{route('marka.edit', base64_encode($value->id))}}" title="Düzenle" class="btn btn-sm"><i style="font-size: 10px; color: green;" class="fas fa-pen" ></i></a>
+                                                <a href="{{route('marka.destroy', $value->id)}}" title="Sil" class="btn btn-sm"><i class="fas fa-trash" style="font-size: 10px; color: red;"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach

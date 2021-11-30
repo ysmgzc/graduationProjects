@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="pull-right">
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
                         </div>
                     </form>
                 </div>

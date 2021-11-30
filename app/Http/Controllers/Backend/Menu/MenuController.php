@@ -48,6 +48,7 @@ class MenuController extends Controller
         $menu->slug = Str::slug($request->title);
         $menu->subcategory = 0;
         $menu->status = ($request->status == 'on') ? 1 : 0 ;
+        $menu->created_at = now();
         $menu->save();
         toastSuccess('Başarılı bir şekilde ekleme işlemini gerçekleştirdiniz.');
         return redirect()->route('menu.index');

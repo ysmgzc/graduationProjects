@@ -23,6 +23,7 @@ class BrandFactory extends Factory
     {
         return [
             'title' => 'Mavi',
+            'slug' => 'mavi',
             'description' => 'Erkeğin Modası',
             'keywords' => 'mavi, ceket, kot pantolon'
         ];
