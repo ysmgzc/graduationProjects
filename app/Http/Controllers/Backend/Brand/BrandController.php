@@ -140,5 +140,16 @@ class BrandController extends Controller
     public function destroy($id)
     {
         // ilgili kısmı silme işlemi
+        if (Auth::check())
+        {
+            $brand = Brand::find(base64_decode($id));
+            $brand->delete();
+            return redirect()->route('marka.index');
+        }
+        else
+        {
+            toastError('Geçersiz işlem.');
+            return redirect()->back();
+        }
     }
 }
