@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Smtp_settingsSeeder::class);
         $this->call(SiteSettingsSeeder::class);
         $this->call(AgreementSeeder::class);
+        $this->call(Brand::class);
     }
 }
