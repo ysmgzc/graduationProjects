@@ -9,5 +9,7 @@ class SiteSettings extends Model
 {
     use HasFactory;
     protected $table = 'site_settings';
+    protected $primaryKey = 'id';
     protected $guarded = [];
+    public $timestamps = true;
 }

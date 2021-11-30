@@ -9,5 +9,7 @@ class Menu extends Model
 {
     use HasFactory;
     protected $table = 'menu';
+    protected $primaryKey = 'id';
     protected $guarded = ['created_at'];
+    public $timestamps = true;
 }

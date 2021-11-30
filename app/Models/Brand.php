@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agreement extends Model
+class Brand extends Model
 {
     use HasFactory;
-    protected $table = 'agreement';
+    protected $table = 'brands';
     protected $primaryKey = 'id';
     protected $guarded = [];
     public $timestamps = true;

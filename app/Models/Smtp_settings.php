@@ -11,6 +11,8 @@ class Smtp_settings extends Model
 
 //    DB de ki bağalantılı tablo ismi
     protected $table = 'smtp_settings';
+    protected $primaryKey = 'id';
 //    Tablodaki butun alanlara erisim ver. guarded içerisine yazılan alanlara erişim işlemi verme
     protected $guarded = [];
+    public $timestamps = true;
 }
