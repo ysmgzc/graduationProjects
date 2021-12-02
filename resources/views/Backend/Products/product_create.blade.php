@@ -1,6 +1,8 @@
 @extends('Backend.layouts.master')
 @section('title') Ürün Ekle @endsection
 @section('css')
+    <!-- Dropzone css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('Backend/assets/css/vendors/dropzone.css')}}">
 @endsection
 @section('content')
 
@@ -12,17 +14,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="page-header-left">
-                            <h3>Add Products
-                                <small>Multikart Admin panel</small>
+                            <h3>Ürün Ekle
+                                <small>Admin Yönetim Paneli</small>
                             </h3>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <ol class="breadcrumb pull-right">
-                            <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                            <li class="breadcrumb-item">Digital</li>
-                            <li class="breadcrumb-item active">Add Product</li>
-                        </ol>
                     </div>
                 </div>
             </div>
@@ -35,12 +30,12 @@
                 <div class="col-xl-6">
                     <div class="card">
                         <div class="card-header">
-                            <h5>General</h5>
+                            <h5>Genel</h5>
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
                                 <div class="form-group">
-                                    <label for="validationCustom01" class="col-form-label pt-0"><span>*</span> Title</label>
+                                    <label for="validationCustom01" class="col-form-label pt-0"><span>*</span> Ürün Adı</label>
                                     <input class="form-control" id="validationCustom01" type="text" required="">
                                 </div>
                                 <div class="form-group">
@@ -80,7 +75,7 @@
                                     </div>
                                 </div>
                                 <label class="col-form-label pt-0"> Product Upload</label>
-                                <form class="dropzone digits" id="singleFileUpload" action="http://themes.pixelstrap.com/upload.php">
+                                <form class="dropzone digits" id="singleFileUpload" action="deneme">
                                     <div class="dz-message needsclick"><i class="fa fa-cloud-upload"></i>
                                         <h4 class="mb-0 f-w-600">Drop files here or click to upload.</h4>
                                     </div>
@@ -135,4 +130,8 @@
     </div>
 @endsection
 @section('js')
+    <!--dropzone js-->
+    <script src="{{(asset('Backend/assets/js/dropzone/dropzone.js'))}}"></script>
+    <script src="{{(asset('Backend/assets/js/dropzone/dropzone-script.js'))}}"></script>
+
 @endsection

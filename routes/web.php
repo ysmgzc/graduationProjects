@@ -77,6 +77,9 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
     Route::get('marka/{id}', [BrandController::class, 'destroy'])->name('marka.destroy');
     Route::resource('marka', BrandController::class);
 
+    Route::get('/ürün', function () {
+        return view('Backend.Products.product_create');
+    })->name('products.add');
 
 });
 
