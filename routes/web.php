@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\Page\PageController;
 use App\Http\Controllers\Backend\Menu\MenuController;
 use App\Http\Controllers\Backend\Menu\SubmenuController;
 use App\Http\Controllers\Backend\Brand\BrandController;
+use App\Http\Controllers\Backend\Product\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,9 +78,9 @@ Route::prefix('panel')->middleware('isAdmin')->group(function (){
     Route::get('marka/{id}', [BrandController::class, 'destroy'])->name('marka.destroy');
     Route::resource('marka', BrandController::class);
 
-    Route::get('/ürün', function () {
-        return view('Backend.Products.product_create');
-    })->name('products.add');
+    Route::prefix('ürün')->group(function (){
+        Route::get('/ekle', [ProductController::class, 'create'])->name('product.create');
+    });
 
 });
 
